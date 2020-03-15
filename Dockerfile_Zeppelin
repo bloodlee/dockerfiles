@@ -1,0 +1,13 @@
+FROM centos:centos7.7.1908
+
+LABEL Maintainer="Yongqiang Li"
+LABEL Email="jasonleehust@gmail.com"
+
+RUN yum -y update
+RUN yum -y install wget java-1.8.0-openjdk.x86_64
+
+RUN mkdir -p /app/zeppelin
+RUN cd /app/zeppelin
+
+RUN wget http://mirror.cogentco.com/pub/apache/zeppelin/zeppelin-0.8.2/zeppelin-0.8.2-bin-all.tgz
+RUN tar zxf zeppelin-0.8.2-bin-all.tgz
